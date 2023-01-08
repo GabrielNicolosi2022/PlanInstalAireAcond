@@ -2,7 +2,6 @@
 const listaDePrecios = [];
 const clientes = [];
 const equipos = [];
-// const materiales = [];
 const matSelect = [];
 let observaciones;
 
@@ -79,9 +78,6 @@ listaDePrecios.push(new ListaPrecios("Cinta Gris", 205));
 listaDePrecios.push(new ListaPrecios("Cinta Marrón", 205));
 listaDePrecios.push(new ListaPrecios("Cinta Morada", 205));
 listaDePrecios.push(new ListaPrecios("Aro embellecedor", 250));
-// console.log(listaDePrecios[0].precio);
-// console.log(listaDePrecios[4].precio);
-// console.log(listaDePrecios.length);
 
 // traigo el formulario para capturar los datos
 const formulario = document.getElementById("form");
