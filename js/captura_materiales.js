@@ -1,42 +1,9 @@
-// Declaro el conjunto de arrays donde se guardaran los datos del programa
-const listaDePrecios = [];
-const clientes = [];
-const equipos = [];
-const materiales = [];
-let observaciones;
-
-// Creo los contructores para los objetos
-class Cliente {
-  constructor(nombre, apellido, direccion, localidad, telefono) {
-    this.nombre = nombre.toUpperCase();
-    this.apellido = apellido.toUpperCase();
-    this.direccion = direccion.toUpperCase();
-    this.localidad = localidad.toUpperCase();
-    this.telefono = telefono;
-  }
-}
-
-class Equipo {
-  constructor(
-    marca,
-    modelo,
-    potencia,
-    tecnologia,
-    tipo,
-    refrigerante,
-    condicion
-  ) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.potencia = potencia;
-    this.tecnologia = tecnologia;
-    this.tipo = tipo;
-    this.refrigerante = refrigerante;
-    this.condicion = condicion;
-  }
-}
+const listaDePrecios = []; //LINEA EXISTENTE
+const materiales = [];     //LINEA EXISTENTE
+let observaciones;         //LINEA EXISTENTE
 
 class ListaPrecios {
+                           //CODIGO EXISTENTE
   constructor(nombre, precio) {
     this.nombre = nombre;
     this.precio = precio;
@@ -44,14 +11,14 @@ class ListaPrecios {
 }
 
 class MaterialesIngresados {
+                           //CODIGO EXISTENTE
   constructor(nombre, cantidad) {
     this.nombre = nombre;
     this.cantidad = cantidad;
   }
 }
 
-
-// Creo una lista de precios con nombres y precios en un array.
+// Creo una lista de precios con nombres y precios en un array. LISTA EXISTENTE
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 3/8", 2150));
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 1/2", 2450));
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 5/8", 2700));
@@ -79,49 +46,15 @@ listaDePrecios.push(new ListaPrecios("Cinta Gris", 205));
 listaDePrecios.push(new ListaPrecios("Cinta Marrón", 205));
 listaDePrecios.push(new ListaPrecios("Cinta Morada", 205));
 listaDePrecios.push(new ListaPrecios("Aro embellecedor", 250));
- // console.log(listaDePrecios[0].precio);
-// console.log(listaDePrecios[4].precio);
-// console.log(listaDePrecios.length);
 
-// traigo el formulario para capturar los datos 
+// traigo el formulario para capturar los datos
 const formulario = document.getElementById("form");
 // Capturo los datos del cliente y del equipo y los muestro por consola.
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-  // capturo los datos del cliente del formulario
-  const nombre = document.getElementById("nombreCliente").value,
-    apellido = document.getElementById("apellidoCliente").value,
-    direccion = document.getElementById("direccionCliente").value,
-    localidad = document.getElementById("localidadCliente").value,
-    telefono = document.getElementById("telefonoCliente").value;
 
-  const nuevoCliente = new Cliente(
-    nombre,
-    apellido,
-    direccion,
-    localidad,
-    telefono
-  );
-  // capturo los datos del equipo del formulario
-  const marca = document.getElementById("marca").value,
-    modelo = document.getElementById("modelo").value,
-    potencia = document.querySelector("#potencia").value,
-    tipo = document.querySelector("#tipo").value,
-    tecnologia = document.querySelector("#tecnologia").value,
-    refrigerante = document.querySelector("#refrigerante").value,
-    condicion = document.querySelector("#condicion").value;
-
-  const nuevoEquipo = new Equipo(
-    marca,
-    modelo,
-    potencia,
-    tecnologia,
-    tipo,
-    refrigerante,
-    condicion
-  );
   // Capturo datos de materiales del formulario
-  const nombreMateriales = [
+  const nombre = [
     document.getElementById("canios").value,
     document.getElementById("aislantes").value,
     document.getElementById("cable").value,
@@ -143,51 +76,26 @@ formulario.addEventListener("submit", (event) => {
     document.getElementById("cantCinta").value,
     document.getElementById("cantEmb").value,
   ];
+
   // Capturo datos de observaciones del formulario
   const obs = document.getElementById("observaciones");
 
-  const listaDeMateriales = new MaterialesIngresados(
-    nombreMateriales,
-    cantidad
-  );
+  const listaDeMateriales = new MaterialesIngresados(nombre, cantidad);
 
-  // Guardo datos de clientes, equipos, materiales y observaciones en variables
-  clientes.push(nuevoCliente);
-  equipos.push(nuevoEquipo);
+  // Guardo datos de materiales y observaciones en variables
   materiales.push(listaDeMateriales);
-  observaciones = obs.value;
-
-  // Muestro en consola los datos obtenidos
-  console.log(clientes);
-  console.log(equipos);
   console.log(materiales);
+  observaciones = obs.value;
   console.log(observaciones);
 });
-
-
-
-
-
-// Pido al usuario que ingrese los productos a calcular.
-/* 
-class ProductosIngresados {
-  constructor(nombre, cantidad) {
-    this.nombre = nombre;
-    this.cantidad = cantidad;
-  }
-}
-
-const productos = [];
+/* const productos = [];
 const cantidades = [];
 let cantidad = 3;
 
- */// Si desea probar el programa con distinta cantidad de productos cambie el valor de let cantidad.
+// Si desea probar el programa con distinta cantidad de productos cambie el valor de let cantidad.
 
 // Pido al usuario que ingrese los productos a calcular.
-/* alert("a continuación ingrese los productos necesarios para la instalación");
-
-
-
+alert("a continuación ingrese los productos necesarios para la instalación");
 
 do {
   let productoIngresado = prompt("Ingresar Producto a calcular:");
@@ -200,43 +108,33 @@ do {
   console.log("vuelta " + productos.length);
 } while (productos.length != cantidad);
 
-
-
-
-
 // Muestro en consola los datos ingresados
 console.log("Productos ingresados: " + productos);
 console.log("Cantidades ingresadas: " + cantidades);
 console.log("Cantidad de Productos ingresados: " + productos.length);
-
-// ====================================================================================================================================================================
+console.log("-----------------------------------------------------");
 
 console.log(
   "no está haciendo lo siguiente:\n Busca en la lista de precios, el precio del producto ingresado y lo carga en el array precioProducto. "
 );
 // Busca el precio del producto ingresado en la lista de precios y lo carga en el array precioProducto.
 let precioProducto = [];
-// Los valores dentro del array los deberia sumar atravez del método .reduce
+
 for (let i = 0; i < listaDePrecios.length; i++) {
   if (listaDePrecios[i].nombre === productos) {
     precioProducto.push(listaDePrecios[i].precio);
     break;
   }
 }
+
 console.log(precioProducto);
 console.log("precioProducto es de tipo: " + typeof precioProducto);
 parseFloat(listaDePrecios.precio);
 // ------------------------------------------------------------------
+
 // Calcula el costo total multiplicando el precio por la cantidad
 // let costoTotal = parseFloat(precioProducto) * cantidades;
 
 // Muestra el costo total en la consola
 // console.log("El costo total es: " + costoTotal);
-
-// ------------------------------------------------------------------
-
-console.log("Gracias por utilizar nuestro sistema!!!");
-
  */
-// Todos los console.log son pruebas que fui haciendo para buscar dónde está el problema, aparentemente nunca se carga el array precioProducto y no se porqué.
-// Todo el código que está comentado es para poder probar solo la programación que no me esta respondiendo, luego se descomenta todo.

@@ -28,7 +28,7 @@
                 validate
               >
                 <!-- Datos del Cliente -->
-                <section>
+                <section class="row pt-3">
                   <span>Cliente</span>
                   <div class="col-md-6 position-relative">
                     <label for="nombreCliente" class="form-label">Nombre</label>
@@ -102,7 +102,7 @@
                   </div>
                 </section>
                 <!-- Datos del Equipo -->
-                <section>
+                <section class="row pt-3">
                   <span>Equipo</span>
                   <div class="col-md-6 position-relative">
                     <label for="marca" class="form-label">Marca</label>
@@ -195,23 +195,17 @@
                   </div>
                 </section>
                 <!-- Ingreso de Materiales -->
-                <section>
-                  <h2 class="text-center mb-3">Materiales</h2>
+                <section class="row pt-3">
+                  <span class="pb-3">Materiales</span>
                   <!-- Caños -->
                   <div class="input-group mb-3">
                     <label class="input-group-text" for="canios">Caños</label>
-                    <select class="form-select" id="canio_1">
-                      <option value="1/4" selected>1/4</option>
-                      <option value="3/8">3/8</option>
-                      <option value="1/2">1/2</option>
-                      <option value="5/8">5/8</option>
-                      <option value="3/4">3/4</option>
-                    </select>
-                    <select class="form-select" id="canio_2">
-                      <option value="3/8" selected>3/8</option>
-                      <option value="1/2">1/2</option>
-                      <option value="5/8">5/8</option>
-                      <option value="3/4">3/4</option>
+                    <select class="form-select" id="canios">
+                      <option value="Caño 1/4 y 3/8" selected>1/4 y 3/8</option>
+                      <option value="Caño 1/4 y 1/2">1/4 y 1/2</option>
+                      <option value="Caño 1/4 y 5/8">1/4 y 5/8</option>
+                      <option value="Caño 3/8 y 5/8">3/8 y 5/8</option>
+                      <option value="Caño 3/8 y 3/4">3/8 y 3/4</option>
                     </select>
                     <input
                       type="number"
@@ -232,18 +226,14 @@
                     <label class="input-group-text" for="aislantes"
                       >Aislante</label
                     >
-                    <select class="form-select" id="aislante_1">
-                      <option value="1/4" selected>1/4</option>
-                      <option value="3/8">3/8</option>
-                      <option value="1/2">1/2</option>
-                      <option value="5/8">5/8</option>
-                      <option value="3/4">3/4</option>
-                    </select>
-                    <select class="form-select" id="aislante_2">
-                      <option value="3/8" selected>3/8</option>
-                      <option value="1/2">1/2</option>
-                      <option value="5/8">5/8</option>
-                      <option value="3/4">3/4</option>
+                    <select class="form-select" id="aislantes">
+                      <option value="Aislante 1/4 y 3/8" selected>
+                        1/4 y 3/8
+                      </option>
+                      <option value="Aislante 1/4 y 1/2">1/4 y 1/2</option>
+                      <option value="Aislante 1/4 y 5/8">1/4 y 5/8</option>
+                      <option value="Aislante 3/8 y 5/8">3/8 y 5/8</option>
+                      <option value="Aislante 3/8 y 3/4">3/8 y 3/4</option>
                     </select>
                     <input
                       type="number"
@@ -263,10 +253,12 @@
                       >Cable Inter.</label
                     >
                     <select class="form-select" id="cable">
-                      <option value="3 x 1,5mm2" selected>3 x 1,5mm2</option>
-                      <option value="5 x 1,5mm2">5 x 1,5mm2</option>
-                      <option value="3 x 2,5mm2">3 x 2,5mm2</option>
-                      <option value="5 x 2,5mm2">5 x 2,5mm2</option>
+                      <option value="Cable 3 x 1,5mm2" selected>
+                        3 x 1,5mm2
+                      </option>
+                      <option value="Cable 5 x 1,5mm2">5 x 1,5mm2</option>
+                      <option value="Cable 3 x 2,5mm2">3 x 2,5mm2</option>
+                      <option value="Cable 5 x 2,5mm2">5 x 2,5mm2</option>
                     </select>
                     <input
                       type="number"
@@ -285,8 +277,14 @@
                   <!-- Manguera Cristal -->
                   <div class="input-group mb-3">
                     <label class="input-group-text" for="manguera"
-                      >Manguera Cristal</label
+                      >Mang Cristal</label
                     >
+                    <select class="form-select" id="manguera">
+                      <option value="Manguera Cristal 5/8" selected>
+                        Mang 5/8
+                      </option>
+                    </select>
+
                     <input
                       type="number"
                       name=""
@@ -301,7 +299,7 @@
                       >Metros</span
                     >
                   </div>
-                  <!-- Ménsulas y Tacos Antivibratorios-->
+                  <!-- Ménsulas -->
                   <div class="input-group mb-3">
                     <label class="input-group-text" for="mensula"
                       >Ménsulas</label
@@ -316,6 +314,20 @@
                       </option>
                       <option value="Varilla Roscada">Varilla Roscada</option>
                     </select>
+                    <input
+                      type="number"
+                      name=""
+                      id="cantMens"
+                      min="0"
+                      step="1"
+                      placeholder="Cantidad"
+                      class="form-control"
+                      required
+                    />
+                    <span class="input-group-text" id="basic-addon2">Un.</span>
+                  </div>
+                  <!-- Tacos Antivibratorios -->
+                  <div class="input-group mb-3">
                     <label class="input-group-text" for="tacos"
                       >Tacos Antiv.</label
                     >
@@ -323,6 +335,17 @@
                       <option value="Pata Ménsula">Pata Ménsula</option>
                       <option value="Pata Piso" selected>Pata Piso</option>
                     </select>
+                    <input
+                      type="number"
+                      name=""
+                      id="cantTacos"
+                      min="0"
+                      step="1"
+                      placeholder="Cantidad"
+                      class="form-control"
+                      required
+                    />
+                    <span class="input-group-text" id="basic-addon2">Un.</span>
                   </div>
                   <!-- Kit Tornillos -->
                   <div class="input-group mb-3">
@@ -336,16 +359,36 @@
                       <option value="Tarugos de 8 y 12">
                         Tarugos de 8 y 12
                       </option>
-                      <option value="Varilla Roscada + Brocas">
+                      <!-- <option value="Varilla Roscada + Brocas">
                         Varilla Roscada + Brocas
-                      </option>
+                      </option> -->
                     </select>
+                    <input
+                      type="number"
+                      name=""
+                      id="cantTorn"
+                      min="0"
+                      step="1"
+                      placeholder="Cantidad"
+                      class="form-control"
+                      required
+                    />
+                    <span class="input-group-text" id="basic-addon2"
+                      >Un.</span
+                    >
                   </div>
                   <!-- Cinta Aislante -->
                   <div class="input-group mb-3">
-                    <label class="input-group-text" for="cinta"
-                      >Cinta Aislante</label
+                    <label class="input-group-text" for="colorCinta"
+                      >Color Cinta</label
                     >
+                    <select class="form-select" id="colorCinta">
+                      <option value="Cinta Beige">Beige</option>
+                      <option value="Cinta Blanca" selected>Blanca</option>
+                      <option value="Cinta Gris">Gris</option>
+                      <option value="Cinta Marrón">Marrón</option>
+                      <option value="Cinta Morada">Morada</option>
+                    </select>
                     <input
                       type="number"
                       name=""
@@ -357,22 +400,18 @@
                       required
                     />
                     <span class="input-group-text" id="basic-addon2">Un.</span>
-                    <label class="input-group-text" for="colorCinta"
-                      >Color</label
-                    >
-                    <select class="form-select" id="colorCinta">
-                      <option value="Beige">Beige</option>
-                      <option value="Blanca" selected>Blanca</option>
-                      <option value="Gris">Gris</option>
-                      <option value="Marrón">Marrón</option>
-                      <option value="Morada">Morada</option>
-                    </select>
                   </div>
                   <!-- Embellecedor -->
                   <div class="input-group mb-3">
-                    <label class="input-group-text" for="embellecedor"
-                      >Embellecedor</label
-                    >
+                    <label class="input-group-text" for="colorEmb">Color Aro</label>
+                    <select class="form-select" id="colorEmb">
+                      <option value="No">No</option>
+                      <option value="Beige">Beige</option>
+                      <option value="Blanco" selected>Blanco</option>
+                      <option value="Gris">Gris</option>
+                      <option value="Marrón">Marrón</option>
+                      <option value="Morada">Morado</option>
+                    </select>
                     <input
                       type="number"
                       name=""
@@ -384,43 +423,14 @@
                       required
                     />
                     <span class="input-group-text" id="basic-addon2">Un.</span>
-                    <label class="input-group-text" for="colorEmb">Color</label>
-                    <select class="form-select" id="colorEmb">
-                      <option value="No">No</option>
-                      <option value="Beige">Beige</option>
-                      <option value="Blanca" selected>Blanca</option>
-                      <option value="Gris">Gris</option>
-                      <option value="Marrón">>Marrón</option>
-                      <option value="Morada">>Morada</option>
-                    </select>
-                  </div>
-                  <!-- Zócalo -->
-                  <div class="input-group mb-3">
-                    <label class="input-group-text" for="zocalo">Zócalo</label>
-                    <select class="form-select" id="zocalo">
-                      <option value="No" selected>No</option>
-                      <option value="100 x 50">100 x 50</option>
-                      <option value="75 x 40">75 x 40</option>
-                    </select>
-                    <input
-                      type="number"
-                      name=""
-                      id="longZocalo"
-                      min="0"
-                      step="1"
-                      placeholder="Longitud"
-                      class="form-control"
-                      required
-                    />
-                    <span class="input-group-text" id="basic-addon2"
-                      >Metros</span
-                    >
                   </div>
                 </section>
                 <!-- Observaciones -->
-                <section>
+                <section class="row pt-3">
                   <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label"
+                    <label
+                      for="exampleFormControlTextarea1"
+                      class="form-label fw-bold"
                       >Observaciones</label
                     >
                     <textarea
@@ -459,9 +469,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/main.js"></script>
-    <!-- <script src="js/captura_cliente.js"></script>
-    <script src="js/captura_equipo.js"></script>
-    <script src="js/captura_materiales.js"></script> -->
-    <!-- <script src="./js/pruebas.js"></script> -->
+    <!-- <script src="js/captura_cliente.js"></script> -->
+    <!-- <script src="js/captura_equipo.js"></script> -->
+    <!-- <script src="js/captura_materiales.js"></script> -->
   </body>
 </html>
