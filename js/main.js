@@ -2,7 +2,8 @@
 const listaDePrecios = [];
 const clientes = [];
 const equipos = [];
-const materiales = [];
+// const materiales = [];
+const matSelect = [];
 let observaciones;
 
 // Creo los contructores para los objetos
@@ -84,7 +85,7 @@ listaDePrecios.push(new ListaPrecios("Aro embellecedor", 250));
 
 // traigo el formulario para capturar los datos
 const formulario = document.getElementById("form");
-// Capturo los datos del cliente y del equipo y los muestro por consola.
+
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
   // capturo los datos del cliente del formulario
@@ -119,47 +120,57 @@ formulario.addEventListener("submit", (event) => {
     refrigerante,
     condicion
   );
+  // Declaro constantes para los materiales
+  const canios = {};
+  const aislante = {};
+  const cable = {};
+  const manguera = {};
+  const mensula = {};
+  const tacos = {};
+  const tornillos = {};
+  const cinta = {};
+  const aro = {};
+  
   // Capturo datos de materiales del formulario
-  const nombreMateriales = [
-    document.getElementById("canios").value,
-    document.getElementById("aislantes").value,
-    document.getElementById("cable").value,
-    document.getElementById("manguera").value,
-    document.getElementById("mensula").value,
-    document.getElementById("tacos").value,
-    document.getElementById("tornillos").value,
-    document.getElementById("colorCinta").value,
-    document.getElementById("colorEmb").value,
-  ];
-  const cantidad = [
-    document.getElementById("longCanios").value,
-    document.getElementById("longAisl").value,
-    document.getElementById("longCable").value,
-    document.getElementById("longMC").value,
-    document.getElementById("cantMens").value,
-    document.getElementById("cantTacos").value,
-    document.getElementById("cantTorn").value,
-    document.getElementById("cantCinta").value,
-    document.getElementById("cantEmb").value,
-  ];
+  canios.material = document.getElementById("canios").value;
+  canios.cantidad = document.getElementById("longCanios").value;
+  aislante.material = document.getElementById("aislantes").value;
+  aislante.cantidad = document.getElementById("longAisl").value;
+  cable.material = document.getElementById("cable").value;
+  cable.cantidad = document.getElementById("longCable").value;
+  manguera.material = document.getElementById("canios").value;
+  manguera.cantidad = document.getElementById("longMC").value;
+  mensula.material = document.getElementById("mensula").value;
+  mensula.cantidad = document.getElementById("cantMens").value;
+  tacos.material = document.getElementById("tacos").value;
+  tacos.cantidad = document.getElementById("cantTacos").value;
+  tornillos.material = document.getElementById("tornillos").value;
+  tornillos.cantidad = document.getElementById("cantTorn").value;
+  cinta.material = document.getElementById("colorCinta").value;
+  cinta.cantidad = document.getElementById("cantCinta").value;
+  aro.material = document.getElementById("colorEmb").value;
+  aro.cantidad = document.getElementById("cantEmb").value;
+
   // Capturo datos de observaciones del formulario
   const obs = document.getElementById("observaciones");
-
-  const listaDeMateriales = new MaterialesIngresados(
-    nombreMateriales,
-    cantidad
-  );
 
   // Guardo datos de clientes, equipos, materiales y observaciones en variables
   clientes.push(nuevoCliente);
   equipos.push(nuevoEquipo);
-  materiales.push(listaDeMateriales);
+  matSelect.push(canios);
+  matSelect.push(aislante);
+  matSelect.push(cable);
+  matSelect.push(manguera);
+  matSelect.push(mensula);
+  matSelect.push(tacos);
+  matSelect.push(tornillos);
+  matSelect.push(cinta);
+  matSelect.push(aro);
   observaciones = obs.value;
 
   // Muestro en consola los datos obtenidos
   console.log(clientes);
   console.log(equipos);
-  console.log(materiales);
+  console.log(matSelect);
   console.log(observaciones);
 });
-
