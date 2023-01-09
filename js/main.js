@@ -103,8 +103,6 @@ formulario.addEventListener("submit", (event) => {
     telefono
   );
 
-  // enviar los datos al localstorage
-
   // capturo los datos del equipo del formulario
   const marca = document.getElementById("marca").value,
     modelo = document.getElementById("modelo").value,
@@ -123,6 +121,7 @@ formulario.addEventListener("submit", (event) => {
     refrigerante,
     condicion
   );
+
   // Declaro constantes para los materiales
   const canios = {},
     aislante = {},
@@ -176,6 +175,18 @@ formulario.addEventListener("submit", (event) => {
   console.log(equipos);
   console.log(matSelect);
   console.log(observaciones);
+
+  // Convierto el objeto en una cadena de texto
+  const clienteString = JSON.stringify(nuevoCliente),
+    equipoString = JSON.stringify(nuevoEquipo),
+    materialesString = JSON.stringify(matSelect),
+    observacionesString = JSON.stringify(observaciones);
+
+  // Guardo la cadena en el localstorage con la clave "nuevoCliente"
+  localStorage.setItem("Cliente", clienteString);
+  localStorage.setItem("Equipo", equipoString);
+  localStorage.setItem("Materiales", materialesString);
+  localStorage.setItem("Observaciones", observacionesString);
 
   // A PARTIR DE AQUÍ CALCULO EL PRECIO TOTAL DE LA INSTALACIÓN"
 
