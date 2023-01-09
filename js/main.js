@@ -102,6 +102,9 @@ formulario.addEventListener("submit", (event) => {
     localidad,
     telefono
   );
+
+  // enviar los datos al localstorage
+
   // capturo los datos del equipo del formulario
   const marca = document.getElementById("marca").value,
     modelo = document.getElementById("modelo").value,
@@ -174,7 +177,7 @@ formulario.addEventListener("submit", (event) => {
   console.log(matSelect);
   console.log(observaciones);
 
-  // A PARTIR DE ACA CALCULO EL PRECIO TOTAL DE LOS MATERIALES"
+  // A PARTIR DE AQUÍ CALCULO EL PRECIO TOTAL DE LA INSTALACIÓN"
 
   // por cada iteracion de la constante matSelect comparar nombre con cada item de la constante listaDePrecios, y al encontrar coincidencia multiplicar matSelect.cantidad * listaDeprecios.precio
   const precioParcial = [];
@@ -192,22 +195,18 @@ formulario.addEventListener("submit", (event) => {
     (total, precio) => total + precio,
     0
   );
-  // ============================================================================================
-  // REVISAR EL IF PORQUE NO ESRTA FUNCIONANDO AL CAMBIAR LA POTENCIA DEL EQUIPO EN EL FORMULARIO
-  let manoDeObra;
-  if (equipos[0].potencia <= 3200) {
+  // Modifico el costo de mano de obra segun potencia del equipo a instalar
+  let potencias = document.getElementById("potencia").value;
+  if (potencias == 2250 || potencias == 3000) {
     manoDeObra = 20000;
-  } else if (equipos[0].potencia > 3200 && equipos[0].potencia <= 4500) {
+  } else if (potencias == 4500) {
     manoDeObra = 24000;
-  } else if (equipos[0].potencia > 4500 && equipos[0].potencia <= 6000) {
-    manoDeObra = 30000;
-  } else if (equipos[0].potencia > 6000 && equipos[0].potencia < 9000) {
+  } else if (potencias == 6000) {
     manoDeObra = 36000;
-  } else if (equipos[0].potencia >= 90000) {
+  } else if (potencias == 90000) {
     manoDeObra = 50000;
   }
   console.log(manoDeObra);
-  // ============================================================================================
 
   // Imprimo en el documento los Costos de Instalación
   let subtotal = document.getElementById("costoDeMateriales"),
