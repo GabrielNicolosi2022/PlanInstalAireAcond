@@ -194,9 +194,11 @@ formulario.addEventListener("submit", (event) => {
   const precioParcial = [];
   for (let i = 0; i < matSelect.length; i++) {
     for (let j = 0; j < listaDePrecios.length; j++) {
-      if (matSelect[i].material === listaDePrecios[j].nombre) {
+      matSelect[i].material === listaDePrecios[j].nombre &&
         precioParcial.push(matSelect[i].cantidad * listaDePrecios[j].precio);
-      }
+      // if (matSelect[i].material === listaDePrecios[j].nombre) {
+      //   precioParcial.push(matSelect[i].cantidad * listaDePrecios[j].precio);
+      // }
     }
   }
   console.log(precioParcial);
@@ -217,7 +219,6 @@ formulario.addEventListener("submit", (event) => {
   } else if (potencias == 90000) {
     manoDeObra = 50000;
   }
-  console.log(manoDeObra);
 
   // Imprimo en el documento los Costos de Instalación
   let subtotal = document.getElementById("costoDeMateriales"),
