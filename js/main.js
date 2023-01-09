@@ -1,5 +1,6 @@
 // Declaro el conjunto de arrays donde se guardaran los datos del programa
 const listaDePrecios = [];
+
 const clientes = [];
 const equipos = [];
 const matSelect = [];
@@ -185,12 +186,40 @@ formulario.addEventListener("submit", (event) => {
     }
   }
   console.log(precioParcial);
-  
+
   // Sumo todos los valores del array precioParcial mediante el método .reduce()
   const precioTotalMat = precioParcial.reduce(
     (total, precio) => total + precio,
     0
   );
+  // ============================================================================================
+  // REVISAR EL IF PORQUE NO ESRTA FUNCIONANDO AL CAMBIAR LA POTENCIA DEL EQUIPO EN EL FORMULARIO
+  let manoDeObra;
+  if (equipos[0].potencia <= 3200) {
+    manoDeObra = 20000;
+  } else if (equipos[0].potencia > 3200 && equipos[0].potencia <= 4500) {
+    manoDeObra = 24000;
+  } else if (equipos[0].potencia > 4500 && equipos[0].potencia <= 6000) {
+    manoDeObra = 30000;
+  } else if (equipos[0].potencia > 6000 && equipos[0].potencia < 9000) {
+    manoDeObra = 36000;
+  } else if (equipos[0].potencia >= 90000) {
+    manoDeObra = 50000;
+  }
+  console.log(manoDeObra);
+  // ============================================================================================
 
-  console.log(precioTotalMat);
+  // Imprimo en el documento los Costos de Instalación
+  let subtotal = document.getElementById("costoDeMateriales"),
+    work = document.getElementById("costoManoDeObra"),
+    totalInstal = document.getElementById("costoTotalInstal"),
+    cti = precioTotalMat + manoDeObra;
+
+  console.log(`Materiales: $${precioTotalMat}`);
+  console.log(`M de Obra: $${manoDeObra}`);
+  console.log(`Costo Total Instalación: $${cti}`);
+
+  subtotal.innerHTML = `<p>Materiales: $${precioTotalMat}</p>`;
+  work.innerHTML = `<p>M de Obra: $${manoDeObra}</p>`;
+  totalInstal.innerHTML = `<span>Costo Total Instalación: $ </span>${cti}`;
 });
