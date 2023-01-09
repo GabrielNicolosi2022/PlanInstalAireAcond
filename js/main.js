@@ -2,10 +2,8 @@
 const listaDePrecios = [];
 const clientes = [];
 const equipos = [];
-// const materiales = [];
 const matSelect = [];
 let observaciones;
-
 // Creo los contructores para los objetos
 class Cliente {
   constructor(nombre, apellido, direccion, localidad, telefono) {
@@ -52,36 +50,37 @@ class MaterialesIngresados {
 }
 
 // Creo una lista de precios con nombres y precios en un array.
-listaDePrecios.push(new ListaPrecios("Caño 1/4 y 3/8", 2150));
-listaDePrecios.push(new ListaPrecios("Caño 1/4 y 1/2", 2450));
-listaDePrecios.push(new ListaPrecios("Caño 1/4 y 5/8", 2700));
-listaDePrecios.push(new ListaPrecios("Caño 3/8 y 5/8", 2950));
-listaDePrecios.push(new ListaPrecios("Caño 3/8 y 3/4", 3450));
-listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 3/8", 359));
-listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 1/2", 380));
-listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 5/8", 398));
-listaDePrecios.push(new ListaPrecios("Aislante 3/8 y 5/8", 413));
-listaDePrecios.push(new ListaPrecios("Aislante 3/8 y 3/4", 461));
-listaDePrecios.push(new ListaPrecios("Cable 3 x 1.5mm", 95));
-listaDePrecios.push(new ListaPrecios("Cable 3 x 2.5mm", 195));
-listaDePrecios.push(new ListaPrecios("Cable 5 x 1.5mm", 180));
-listaDePrecios.push(new ListaPrecios("Cable 5 x 2.5mm", 280));
-listaDePrecios.push(new ListaPrecios("Manguera Cristal 5/8", 85));
-listaDePrecios.push(new ListaPrecios("Mensula h/4500", 900));
-listaDePrecios.push(new ListaPrecios("Mensula h/6000", 1610));
-listaDePrecios.push(new ListaPrecios("Pata mensula", 170));
-listaDePrecios.push(new ListaPrecios("Pata piso", 185));
-listaDePrecios.push(new ListaPrecios("Tarugos de 6 y 10", 175));
-listaDePrecios.push(new ListaPrecios("Tarugos de 8 y 12", 215));
-listaDePrecios.push(new ListaPrecios("Cinta Beige", 205));
-listaDePrecios.push(new ListaPrecios("Cinta Blanca", 205));
-listaDePrecios.push(new ListaPrecios("Cinta Gris", 205));
-listaDePrecios.push(new ListaPrecios("Cinta Marrón", 205));
-listaDePrecios.push(new ListaPrecios("Cinta Morada", 205));
-listaDePrecios.push(new ListaPrecios("Aro embellecedor", 250));
-// console.log(listaDePrecios[0].precio);
-// console.log(listaDePrecios[4].precio);
-// console.log(listaDePrecios.length);
+listaDePrecios.push(new ListaPrecios("Caño 1/4 y 3/8", 5626));
+listaDePrecios.push(new ListaPrecios("Caño 1/4 y 1/2", 6632));
+listaDePrecios.push(new ListaPrecios("Caño 1/4 y 5/8", 7787));
+listaDePrecios.push(new ListaPrecios("Caño 3/8 y 5/8", 9091));
+listaDePrecios.push(new ListaPrecios("Caño 3/8 y 3/4", 6781));
+listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 3/8", 745));
+listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 1/2", 861));
+listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 5/8", 932));
+listaDePrecios.push(new ListaPrecios("Aislante 3/8 y 5/8", 1011));
+listaDePrecios.push(new ListaPrecios("Aislante 3/8 y 3/4", 1098));
+listaDePrecios.push(new ListaPrecios("Cable 3 x 1,5mm", 185));
+listaDePrecios.push(new ListaPrecios("Cable 3 x 2,5mm", 285));
+listaDePrecios.push(new ListaPrecios("Cable 5 x 1,5mm", 290));
+listaDePrecios.push(new ListaPrecios("Cable 5 x 2,5mm", 444));
+listaDePrecios.push(new ListaPrecios("Manguera Cristal 5/8", 150));
+listaDePrecios.push(new ListaPrecios("Mensula h/4500", 1986));
+listaDePrecios.push(new ListaPrecios("Mensula h/6000", 3845));
+listaDePrecios.push(new ListaPrecios("Pata mensula", 301));
+listaDePrecios.push(new ListaPrecios("Pata piso", 322));
+listaDePrecios.push(new ListaPrecios("Tarugos de 6 y 10", 292));
+listaDePrecios.push(new ListaPrecios("Tarugos de 8 y 12", 315));
+listaDePrecios.push(new ListaPrecios("Cinta Beige", 616));
+listaDePrecios.push(new ListaPrecios("Cinta Blanca", 616));
+listaDePrecios.push(new ListaPrecios("Cinta Gris", 616));
+listaDePrecios.push(new ListaPrecios("Cinta Marrón", 616));
+listaDePrecios.push(new ListaPrecios("Cinta Morada", 616));
+listaDePrecios.push(new ListaPrecios("Aro Beige", 105));
+listaDePrecios.push(new ListaPrecios("Aro Blanco", 105));
+listaDePrecios.push(new ListaPrecios("Aro Gris", 105));
+listaDePrecios.push(new ListaPrecios("Aro Marrón", 105));
+listaDePrecios.push(new ListaPrecios("Aro Morado", 105));
 
 // traigo el formulario para capturar los datos
 const formulario = document.getElementById("form");
@@ -121,16 +120,16 @@ formulario.addEventListener("submit", (event) => {
     condicion
   );
   // Declaro constantes para los materiales
-  const canios = {};
-  const aislante = {};
-  const cable = {};
-  const manguera = {};
-  const mensula = {};
-  const tacos = {};
-  const tornillos = {};
-  const cinta = {};
-  const aro = {};
-  
+  const canios = {},
+    aislante = {},
+    cable = {},
+    manguera = {},
+    mensula = {},
+    tacos = {},
+    tornillos = {},
+    cinta = {},
+    aro = {};
+
   // Capturo datos de materiales del formulario
   canios.material = document.getElementById("canios").value;
   canios.cantidad = document.getElementById("longCanios").value;
@@ -138,7 +137,7 @@ formulario.addEventListener("submit", (event) => {
   aislante.cantidad = document.getElementById("longAisl").value;
   cable.material = document.getElementById("cable").value;
   cable.cantidad = document.getElementById("longCable").value;
-  manguera.material = document.getElementById("canios").value;
+  manguera.material = document.getElementById("manguera").value;
   manguera.cantidad = document.getElementById("longMC").value;
   mensula.material = document.getElementById("mensula").value;
   mensula.cantidad = document.getElementById("cantMens").value;
@@ -173,4 +172,25 @@ formulario.addEventListener("submit", (event) => {
   console.log(equipos);
   console.log(matSelect);
   console.log(observaciones);
+
+  // A PARTIR DE ACA CALCULO EL PRECIO TOTAL DE LOS MATERIALES"
+
+  // por cada iteracion de la constante matSelect comparar nombre con cada item de la constante listaDePrecios, y al encontrar coincidencia multiplicar matSelect.cantidad * listaDeprecios.precio
+  const precioParcial = [];
+  for (let i = 0; i < matSelect.length; i++) {
+    for (let j = 0; j < listaDePrecios.length; j++) {
+      if (matSelect[i].material === listaDePrecios[j].nombre) {
+        precioParcial.push(matSelect[i].cantidad * listaDePrecios[j].precio);
+      }
+    }
+  }
+  console.log(precioParcial);
+  
+  // Sumo todos los valores del array precioParcial mediante el método .reduce()
+  const precioTotalMat = precioParcial.reduce(
+    (total, precio) => total + precio,
+    0
+  );
+
+  console.log(precioTotalMat);
 });
