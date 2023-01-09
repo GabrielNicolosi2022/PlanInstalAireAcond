@@ -4,7 +4,6 @@ const clientes = [];
 const equipos = [];
 const matSelect = [];
 let observaciones;
-
 // Creo los contructores para los objetos
 class Cliente {
   constructor(nombre, apellido, direccion, localidad, telefono) {
@@ -78,6 +77,9 @@ listaDePrecios.push(new ListaPrecios("Cinta Gris", 205));
 listaDePrecios.push(new ListaPrecios("Cinta Marrón", 205));
 listaDePrecios.push(new ListaPrecios("Cinta Morada", 205));
 listaDePrecios.push(new ListaPrecios("Aro embellecedor", 250));
+// console.log(listaDePrecios[0].precio);
+// console.log(listaDePrecios[4].precio);
+// console.log(listaDePrecios.length);
 
 // traigo el formulario para capturar los datos
 const formulario = document.getElementById("form");
@@ -117,16 +119,16 @@ formulario.addEventListener("submit", (event) => {
     condicion
   );
   // Declaro constantes para los materiales
-  const canios = {};
-  const aislante = {};
-  const cable = {};
-  const manguera = {};
-  const mensula = {};
-  const tacos = {};
-  const tornillos = {};
-  const cinta = {};
-  const aro = {};
-  
+  const canios = {},
+    aislante = {},
+    cable = {},
+    manguera = {},
+    mensula = {},
+    tacos = {},
+    tornillos = {},
+    cinta = {},
+    aro = {};
+
   // Capturo datos de materiales del formulario
   canios.material = document.getElementById("canios").value;
   canios.cantidad = document.getElementById("longCanios").value;
@@ -134,7 +136,7 @@ formulario.addEventListener("submit", (event) => {
   aislante.cantidad = document.getElementById("longAisl").value;
   cable.material = document.getElementById("cable").value;
   cable.cantidad = document.getElementById("longCable").value;
-  manguera.material = document.getElementById("canios").value;
+  manguera.material = document.getElementById("manguera").value;
   manguera.cantidad = document.getElementById("longMC").value;
   mensula.material = document.getElementById("mensula").value;
   mensula.cantidad = document.getElementById("cantMens").value;
@@ -169,4 +171,25 @@ formulario.addEventListener("submit", (event) => {
   console.log(equipos);
   console.log(matSelect);
   console.log(observaciones);
+
+  // A PARTIR DE ACA CALCULO EL PRECIO TOTAL DE LOS MATERIALES"
+
+  // por cada iteracion de la constante matSelect comparar nombre con cada item de la constante listaDePrecios, y al encontrar coincidencia multiplicar matSelect.cantidad * listaDeprecios.precio
+  const precioParcial = [];
+  for (let i = 0; i < matSelect.length; i++) {
+    for (let j = 0; j < listaDePrecios.length; j++) {
+      if (matSelect[i].material === listaDePrecios[j].nombre) {
+        precioParcial.push(matSelect[i].cantidad * listaDePrecios[j].precio);
+      }
+    }
+  }
+  console.log(precioParcial);
+  
+  // Sumo todos los valores del array precioParcial mediante el método .reduce()
+  const precioTotalMat = precioParcial.reduce(
+    (total, precio) => total + precio,
+    0
+  );
+
+  console.log(precioTotalMat);
 });
