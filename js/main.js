@@ -232,5 +232,5 @@ formulario.addEventListener("submit", (event) => {
 
   subtotal.innerHTML = `<p>Materiales: $${precioTotalMat}</p>`;
   work.innerHTML = `<p>M de Obra: $${manoDeObra}</p>`;
-  totalInstal.innerHTML = `<span>Costo Total Instalación: $ </span>${cti}`;
+  totalInstal.innerHTML = `<span>Costo Total Instalación: $ ${cti}.-</span>`;
 });
