@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "nombre": "Caño 1/4 y 3/8",
+    "precio": 5626
+  },
+  {
+    "id": 2,
+    "nombre": "Caño 1/4 y 1/2",
+    "precio": 6632
+  },
+  {
+    "id": 3,
+    "nombre": "Caño 1/4 y 5/8",
+    "precio": 7781
+  },
+  {
+    "id": 4,
+    "nombre": "Caño 3/8 y 5/8",
+    "precio": 9091
+  },
+  {
+    "id": 5,
+    "nombre": "Caño 3/8 y 3/4",
+    "precio": 10246
+  },
+  {
+    "id": 6,
+    "nombre": "Aislante 1/4 y 3/8",
+    "precio": 745
+  },
+  {
+    "id": 7,
+    "nombre": "Aislante 1/4 y 1/2",
+    "precio": 861
+  },
+  {
+    "id": 8,
+    "nombre": "Aislante 1/4 y 5/8",
+    "precio": 932
+  },
+  {
+    "id": 8,
+    "nombre": "Aislante 3/8 y 5/8",
+    "precio": 1011
+  },
+  {
+    "id": 10,
+    "nombre": "Aislante 3/8 y 3/4",
+    "precio": 1098
+  },
+  {
+    "id": 11,
+    "nombre": "Cable 3 x 1,5mm",
+    "precio": 5626
+  },
+  {
+    "id": 12,
+    "nombre": "Cable 3 x 2,5mm",
+    "precio": 6632
+  },
+  {
+    "id": 13,
+    "nombre": "Cable 5 x 1,5mm",
+    "precio": 7781
+  },
+  {
+    "id": 14,
+    "nombre": "Cable 5 x 2,5mm",
+    "precio": 9091
+  },
+  {
+    "id": 15,
+    "nombre": "Manguera Cristal 5/8",
+    "precio": 150
+  },
+  {
+    "id": 16,
+    "nombre": "Mensula 42 h/3000",
+    "precio": 1543
+  },
+  {
+    "id": 17,
+    "nombre": "Mensula 52 h/4500",
+    "precio": 1986
+  },
+  {
+    "id": 18,
+    "nombre": "Mensula 62 h/6000",
+    "precio": 3845
+  },
+  {
+    "id": 19,
+    "nombre": "Pata mensula",
+    "precio": 301
+  },
+  {
+    "id": 20,
+    "nombre": "Pata piso",
+    "precio": 322
+  },
+  {
+    "id": 21,
+    "nombre": "Tarugos de 6 y 10",
+    "precio": 292
+  },
+  {
+    "id": 22,
+    "nombre": "Tarugos de 8 y 12",
+    "precio": 315
+  },
+  {
+    "id": 23,
+    "nombre": "Cinta Beige",
+    "precio": 616
+  },
+  {
+    "id": 24,
+    "nombre": "Cinta Blanca",
+    "precio": 616
+  },
+  {
+    "id": 25,
+    "nombre": "Cinta Gris",
+    "precio": 616
+  },
+  {
+    "id": 26,
+    "nombre": "Cinta Marrón",
+    "precio": 616
+  },
+  {
+    "id": 27,
+    "nombre": "Cinta Morada",
+    "precio": 616
+  },
+  {
+    "id": 28,
+    "nombre": "Aro Beige",
+    "precio": 105
+  },
+  {
+    "id": 29,
+    "nombre": "Aro Blanco",
+    "precio": 105
+  },
+  {
+    "id": 30,
+    "nombre": "Aro Gris",
+    "precio": 105
+  },
+  {
+    "id": 31,
+    "nombre": "Aro Marrón",
+    "precio": 105
+  },
+  {
+    "id": 32,
+    "nombre": "Aro Morado",
+    "precio": 105
+  },
+  {
+    "id": 33,
+    "nombre": "Espiga manguera (UNION-TEE-Y-CODO)",
+    "precio": 60
+  }
+]
