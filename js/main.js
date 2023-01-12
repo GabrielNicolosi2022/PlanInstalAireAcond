@@ -55,7 +55,7 @@ listaDePrecios.push(new ListaPrecios("Caño 1/4 y 3/8", 5626));
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 1/2", 6632));
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 5/8", 7787));
 listaDePrecios.push(new ListaPrecios("Caño 3/8 y 5/8", 9091));
-listaDePrecios.push(new ListaPrecios("Caño 3/8 y 3/4", 6781));
+listaDePrecios.push(new ListaPrecios("Caño 3/8 y 3/4", 10246));
 listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 3/8", 745));
 listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 1/2", 861));
 listaDePrecios.push(new ListaPrecios("Aislante 1/4 y 5/8", 932));
