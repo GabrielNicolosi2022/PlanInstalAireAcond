@@ -1,3 +1,6 @@
+body{
+  margin: 20px;
+}
 .main__form {
   width: 50vw;
   margin-left: auto;
@@ -7,4 +10,13 @@
 }
 span {
   font-weight: bold;
+}
+.fecha {
+  display: grid;
+  justify-content: end;
+  border-bottom: 3px double #000;
+}
+.btnPrint {
+display: grid;
+margin: 0 12px 12px;
 }

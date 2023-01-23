@@ -27,6 +27,8 @@
                 autocomplete="on"
                 validate
               >
+                <!-- Fecha Actual -->
+                <div class="row pt-3" id="today"></div>
                 <!-- Datos del Cliente -->
                 <section class="row pt-3">
                   <span>Cliente</span>
@@ -465,6 +467,10 @@
         </div>
       </section>
       <section>
+        <div
+          class="d-grid gap-2 d-md-flex justify-content-md-end"
+          id="imprimir"
+        ></div>
         <div id="costoDeMateriales"></div>
         <div id="costoManoDeObra"></div>
         <div id="costoTotalInstal"></div>
@@ -476,9 +482,9 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <!-- Luxon V 3.2.1 -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+    <!-- custom -->
     <script src="js/main.js"></script>
-    <!-- <script src="js/captura_cliente.js"></script> -->
-    <!-- <script src="js/captura_equipo.js"></script> -->
-    <!-- <script src="js/captura_materiales.js"></script> -->
   </body>
 </html>
