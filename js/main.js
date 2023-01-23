@@ -1,3 +1,5 @@
+
+
 // Declaro el conjunto de arrays donde se guardaran los datos del programa
 const listaDePrecios = [];
 const clientes = [];
@@ -185,6 +187,15 @@ formulario.addEventListener("submit", (event) => {
   matSelect.push(cinta);
   matSelect.push(aro);
   observaciones = obs.value;
+
+// Confirmo captura de datos
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Los datos han sido guardados correctamente",
+    showConfirmButton: false,
+    timer: 1500,
+  });
 
   // Muestro en consola los datos obtenidos
   console.log(clientes);
