@@ -1,3 +1,7 @@
+body{
+  margin: 20px;
+  background-color:aqua;
+}
 .main__form {
   width: 50vw;
   margin-left: auto;
@@ -7,4 +11,16 @@
 }
 span {
   font-weight: bold;
+}
+.fecha {
+  display: grid;
+  justify-content: end;
+  border-bottom: 3px double #000;
+}
+.btnPrint {
+display: grid;
+margin: 0 12px 12px;
+}
+.costos{
+  margin-left: 15px;
 }

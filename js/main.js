@@ -1,6 +1,32 @@
+/* 
+=========================================================================
+El siguiente programa es un calculador de costos de instalación
+de aire acondicionado, el mismo formará parte de una aplicacion
+referida a la refrigeración.
+
+Autor: Gabriel Alejandro Nicolosi
+Camada: 34105
+Año: 01/2023
+
+Funcionamiento:
+1- Ingresar los datos del Cliente
+2- Ingresar los datos del Equipo
+3- Ingresar los Materiales necesarios para la instalación
+4- Ingresar las observaciones pertinentes a la instalación (opcional)
+
+Una vez guardados los datos el programa indicará: 
+-Costo de Materiales
+-Costo de mano de Obra
+-Costo total de Instalación
+-Posibilidad de imprimir el formulario en formato papel (impresora)
+
+Nota: El costo de mano de obra va a cambiar según la potencia del equipo ingresado.
+
+=========================================================================
+*/
+
 // Declaro el conjunto de arrays donde se guardaran los datos del programa
 const listaDePrecios = [];
-
 const clientes = [];
 const equipos = [];
 const matSelect = [];
@@ -50,7 +76,15 @@ class MaterialesIngresados {
   }
 }
 
-// Creo una lista de precios con nombres y precios en un array.
+// Imprimo la fecha actual en el formulario
+const DateTime = luxon.DateTime;
+const dt = DateTime.local();
+const hoy = document.getElementById("today");
+hoy.innerHTML = `<span class = "fecha">Fecha: ${dt.toLocaleString(
+  DateTime.DATE_SHORT
+)}</span>`;
+
+/* // Creo una lista de precios con nombres y precios en un array.
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 3/8", 5626));
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 1/2", 6632));
 listaDePrecios.push(new ListaPrecios("Caño 1/4 y 5/8", 7787));
@@ -82,7 +116,16 @@ listaDePrecios.push(new ListaPrecios("Aro Blanco", 105));
 listaDePrecios.push(new ListaPrecios("Aro Gris", 105));
 listaDePrecios.push(new ListaPrecios("Aro Marrón", 105));
 listaDePrecios.push(new ListaPrecios("Aro Morado", 105));
-
+ */
+// traigo una lista de precios externa con nombres y precios en un json.
+fetch("/materiales.json")
+  .then((res) => res.json())
+  .then((data) => {
+    data.forEach((producto) => {
+      listaDePrecios.push(new ListaPrecios(producto.nombre, producto.precio));
+    });
+    console.log(listaDePrecios);
+  });
 // traigo el formulario para capturar los datos
 const formulario = document.getElementById("form");
 
@@ -170,6 +213,15 @@ formulario.addEventListener("submit", (event) => {
   matSelect.push(aro);
   observaciones = obs.value;
 
+  // Confirmo captura de datos
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Los datos han sido guardados correctamente",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
   // Muestro en consola los datos obtenidos
   console.log(clientes);
   console.log(equipos);
@@ -225,12 +277,24 @@ formulario.addEventListener("submit", (event) => {
     work = document.getElementById("costoManoDeObra"),
     totalInstal = document.getElementById("costoTotalInstal"),
     cti = precioTotalMat + manoDeObra;
-
   console.log(`Materiales: $${precioTotalMat}`);
   console.log(`M de Obra: $${manoDeObra}`);
   console.log(`Costo Total Instalación: $${cti}`);
 
-  subtotal.innerHTML = `<p>Materiales: $${precioTotalMat}</p>`;
-  work.innerHTML = `<p>M de Obra: $${manoDeObra}</p>`;
-  totalInstal.innerHTML = `<span>Costo Total Instalación: $ ${cti}.-</span>`;
+  subtotal.innerHTML = `<p class = "costos">Materiales: $${precioTotalMat}</p>`;
+  work.innerHTML = `<p class = "costos">M de Obra: $${manoDeObra}</p>`;
+  totalInstal.innerHTML = `<span class = "costos">Costo Total Instalación: $ ${cti}.-</span>`;
+
+  // Creo botón de imprimir formulario una vez completado el mismo
+  const btnImp = document.getElementById("imprimir");
+  btnImp.innerHTML = `<button type="button" class="btn btn-primary btnPrint" id="botonPrint">
+        Imprimir Formulario
+      </button>`;
+  // Envio el formulario a la impresora
+  const impForm = document.getElementById("botonPrint");
+  impForm.addEventListener("click", respuesta);
+  function respuesta() {
+    window.print(formulario);
+    console.log("imprimiendo documento");
+  }
 });
