@@ -1,4 +1,29 @@
+/* 
+=========================================================================
+El siguiente programa es un calculador de costos de instalación
+de aire acondicionado, el mismo formará parte de una aplicacion
+referida a la refrigeración.
 
+Autor: Gabriel Alejandro Nicolosi
+Camada: 34105
+Año: 01/2023
+
+Funcionamiento:
+1- Ingresar los datos del Cliente
+2- Ingresar los datos del Equipo
+3- Ingresar los Materiales necesarios para la instalación
+4- Ingresar las observaciones pertinentes a la instalación (opcional)
+
+Una vez guardados los datos el programa indicará: 
+-Costo de Materiales
+-Costo de mano de Obra
+-Costo total de Instalación
+-Posibilidad de imprimir el formulario en formato papel (impresora)
+
+Nota: El costo de mano de obra va a cambiar según la potencia del equipo ingresado.
+
+=========================================================================
+*/
 
 // Declaro el conjunto de arrays donde se guardaran los datos del programa
 const listaDePrecios = [];
@@ -188,7 +213,7 @@ formulario.addEventListener("submit", (event) => {
   matSelect.push(aro);
   observaciones = obs.value;
 
-// Confirmo captura de datos
+  // Confirmo captura de datos
   Swal.fire({
     position: "top-end",
     icon: "success",
@@ -256,9 +281,9 @@ formulario.addEventListener("submit", (event) => {
   console.log(`M de Obra: $${manoDeObra}`);
   console.log(`Costo Total Instalación: $${cti}`);
 
-  subtotal.innerHTML = `<p>Materiales: $${precioTotalMat}</p>`;
-  work.innerHTML = `<p>M de Obra: $${manoDeObra}</p>`;
-  totalInstal.innerHTML = `<span>Costo Total Instalación: $ ${cti}.-</span>`;
+  subtotal.innerHTML = `<p class = "costos">Materiales: $${precioTotalMat}</p>`;
+  work.innerHTML = `<p class = "costos">M de Obra: $${manoDeObra}</p>`;
+  totalInstal.innerHTML = `<span class = "costos">Costo Total Instalación: $ ${cti}.-</span>`;
 
   // Creo botón de imprimir formulario una vez completado el mismo
   const btnImp = document.getElementById("imprimir");
